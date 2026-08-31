@@ -71,12 +71,12 @@ public class Horario
 
     }
 
-    public Horario getHorarioFuturo (int qtdSegundos) throws Exception // nao altera o this
+    //public Horario getHorarioFuturo (int qtdSegundos) throws Exception // nao altera o this
     {
         // faça
     }
 
-    public Horario getHorarioPassado (int qtdSegundos) throws Exception // nao altera o this
+    //public Horario getHorarioPassado (int qtdSegundos) throws Exception // nao altera o this
     {
         // faça
     }

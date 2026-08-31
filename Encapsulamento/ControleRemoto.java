@@ -15,7 +15,7 @@ public class ControleRemoto implements Controlador{ //tenho que anotar sobre ess
     public byte getVolume(){
         return this.volume;
     }
-    public void setVolume(byte vol){
+    public void setVolume(int vol){
         this.volume = vol;
     }  
 
@@ -51,44 +51,49 @@ public class ControleRemoto implements Controlador{ //tenho que anotar sobre ess
 
     @Override
     public void fecharMenu() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'fecharMenu'");
+        System.out.println("Fechando Menu");
     }
 
     @Override
     public void maisVolume() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'maisVolume'");
+        if (this.isLigado()){
+            this.setVolume(this.getVolume() + 5);
+        }
     }
 
     @Override
     public void menosVolume() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'menosVolume'");
+        if (this.isLigado()){
+            this.setVolume(this.getVolume() -5 );
+        }
     }
 
     @Override
     public void ligarMudo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'ligarMudo'");
+        if(this.isLigado() && this.getVolume() > 0){
+            this.setVolume(0);
+        }
     }
 
     @Override
     public void desligarMudo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'desligarMudo'");
+        if (this.isLigado() && this.getVolume() == 0){
+            this.setVolume(50);
+        }
     }
 
     @Override
     public void play() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'play'");
+        if (this.isLigado() && !(this.isTocando())){
+            this.setTocando(true);
+        }
     }
 
     @Override
     public void pause() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pause'");
+        if (this.isLigado() && !(this.isTocando())){
+            this.setTocando(false);
+        }
     }
 
 

@@ -62,7 +62,7 @@ public class Horario
         
         totalSegundos = totalSegundos % 86400; //número de segundos em 1 dia 
         if (totalSegundos <0){
-            totalSegundos += 86400;
+            totalSegundos += 86400; // to criando o dia do zero pq o fdp voltou o dia inteiro 
         }
 
         this.hora = (byte) ((totalSegundos /3600));

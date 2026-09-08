@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class ControladorDeErros implements Cloneable
 {
     private int qtdMax, qtdErr=0;
@@ -7,7 +9,7 @@ public class ControladorDeErros implements Cloneable
         // verifica se qtdMax fornecida n�o � positiva, lan�ando
         // uma exce��o.
         // armazena qtdMax fornecida em this.qtdMax.
-        if(qtdMax < 0 ){
+        if(qtdMax <= 0 ){
             throw new Exception();
         }
         this.qtdMax = qtdMax;
@@ -45,17 +47,22 @@ public class ControladorDeErros implements Cloneable
     {
         // verificar se this e obj possuem o mesmo conte�do, retornando
         // true no caso afirmativo ou false no caso negativo
+        if (this == obj) return true;
+        if(getClass() != obj.getClass()) return false;
+        return Objects.equals(this, obj);
     }
 
     @Override
     public int hashCode ()
     {
         // calcular e retornar o hashcode de this
+        return Objects.hash(this);
     }
 
     public ControladorDeErros (ControladorDeErros c) throws Exception // construtor de c�pia
     {
         // copiar c.qtdMax e c.qtdErr, respectivamente em, this.qtdMax e this.qtdErr
+
     }
 
     @Override

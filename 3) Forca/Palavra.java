@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Palavra implements Comparable<Palavra>
 {
     private String texto;
@@ -13,12 +15,13 @@ public class Palavra implements Comparable<Palavra>
     {
         // percorre o String this.texto, conta e retorna
         // quantas letras existem nele iguais a letra fornecida
-        int quantidade = 0
+        int quantidade = 0;
         for (int i=0; i<this.texto.length(); i++){
             if(this.texto.charAt(i) == letra){
                 quantidade++;
             }
         }
+        return quantidade; 
     }
 
     public int getPosicaoDaIezimaOcorrencia (int i, char letra) throws Exception
@@ -32,6 +35,8 @@ public class Palavra implements Comparable<Palavra>
         // e assim por diante.
         // lan�ar excecao caso nao encontre em this.texto
         // a I�zima apari��o da letra fornecida.
+
+        
     }
 
     public int getTamanho ()
@@ -50,6 +55,10 @@ public class Palavra implements Comparable<Palavra>
     {
         // verificar se this e obj possuem o mesmo conte�do, retornando
         // true no caso afirmativo ou false no caso negativo
+        if (this == obj) return true;
+        if (obj == null) return false; 
+        if (this.getClass() != obj.getClass()) return false; 
+        return Objects.equals(this, obj); //testa o null dos atributos individuais do objeto, não do objeto obj como um todo (como feito antes dessa linha)
     }
 
     @Override

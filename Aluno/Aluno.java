@@ -1,4 +1,4 @@
-public class Aluno
+public class Aluno<Data>
 {
     //...
     private byte   idade;
@@ -7,13 +7,13 @@ public class Aluno
     //...
     
     //...
-    public Aluno (...,byte i, String no, Data na,...)
+    public Aluno (byte i, String no, Data na) throws Exception
     {
-        ...
+        
         this.setIdade      (i);
         this.setNome       (no);
         this.setNascimento (na);
-        ...
+        
     }
 
     public void setIdade (byte i) throws Exception

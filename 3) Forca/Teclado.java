@@ -20,7 +20,7 @@ public class Teclado
             ret = teclado.readLine ();
         }
         catch (IOException erro)
-        {} // sei que nao vai dar erro
+        {} // sei que nao vai dar erro, pois teclado nunca da erro, mas se fosse outro tipo de arquivo, teria essa chance
 
         return ret;
     }
@@ -31,10 +31,10 @@ public class Teclado
 
         try
         {
-            ret = Byte.parseByte (teclado.readLine ());
+            ret = Byte.parseByte (teclado.readLine ()); //precisa do parse pois readLine () transforma tudo que vem do "teclado" (InputStreamReader) em string
         }
         catch (IOException erro)
-        {} // sei que nao vai dar erro
+        {} // sei que nao vai dar erro, pois teclado nunca da erro, mas se fosse outro tipo de arquivo, teria essa chance
         catch (NumberFormatException erro)
         {
             throw new Exception ("Byte invalido!");

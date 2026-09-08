@@ -1,20 +1,22 @@
+import java.util.Objects;
+
 public class Tracinhos implements Cloneable
 {
     private char texto [];
 
     public Tracinhos (int qtd) throws Exception
     {
-        // verifica se qtd não é positiva, lançando uma exceção.
+        // verifica se qtd nï¿½o ï¿½ positiva, lanï¿½ando uma exceï¿½ï¿½o.
         // instancia this.texto com um vetor com tamanho igual qtd.
         // preenche this.texto com underlines (_).
     }
 
     public void revele (int posicao, char letra) throws Exception
     {
-        // verifica se posicao é negativa ou então igual ou maior
-        // do que this.texto.length, lançando uma exceção.
+        // verifica se posicao ï¿½ negativa ou entï¿½o igual ou maior
+        // do que this.texto.length, lanï¿½ando uma exceï¿½ï¿½o.
         // verifica se em this.texto[posicao] ainda tem '_'; nao
-        // tendo, lança exceção.
+        // tendo, lanï¿½a exceï¿½ï¿½o.
         // armazena a letra fornecida na posicao tambem fornecida
         // do vetor this.texto
     }
@@ -31,16 +33,20 @@ public class Tracinhos implements Cloneable
     @Override
     public String toString ()
     {
-        // retorna um String com TODOS os caracteres que há
-        // no vetor this.texto, intercalados com espaços em
+        // retorna um String com TODOS os caracteres que hï¿½
+        // no vetor this.texto, intercalados com espaï¿½os em
         // branco
     }
 
     @Override
     public boolean equals (Object obj)
     {
-        // verificar se this e obj possuem o mesmo conteúdo, retornando
+        // verificar se this e obj possuem o mesmo conteï¿½do, retornando
         // true no caso afirmativo ou false no caso negativo
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (this.getClass() != obj.getClass()) return false;
+        return Objects.equals(this, obj);
     }
 
     @Override
@@ -49,10 +55,10 @@ public class Tracinhos implements Cloneable
         // calcular e retornar o hashcode de this
     }
 
-    public Tracinhos (Tracinhos t) throws Exception // construtor de cópia
+    public Tracinhos (Tracinhos t) throws Exception // construtor de cï¿½pia
     {
         // intanciar this.texto um vetor com o mesmo tamanho de t.texto
-        // e copilar o conteúdo de t.texto para this.texto
+        // e copilar o conteï¿½do de t.texto para this.texto
     }
 
     @Override

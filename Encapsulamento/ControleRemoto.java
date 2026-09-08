@@ -2,7 +2,7 @@ package Encapsulamento;
 
 public class ControleRemoto implements Controlador{ //tenho que anotar sobre esse implements para linkar à interface 
     //Atributos 
-    private byte volume; 
+    private int volume; 
     private boolean ligado; 
     private boolean tocando; 
 
@@ -12,7 +12,7 @@ public class ControleRemoto implements Controlador{ //tenho que anotar sobre ess
         this.tocando = false; 
     }
 
-    public byte getVolume(){
+    public int getVolume(){
         return this.volume;
     }
     public void setVolume(int vol){

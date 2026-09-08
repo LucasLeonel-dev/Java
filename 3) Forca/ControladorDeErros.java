@@ -59,10 +59,11 @@ public class ControladorDeErros implements Cloneable
         return Objects.hash(this);
     }
 
-    public ControladorDeErros (ControladorDeErros c) throws Exception // construtor de c�pia
+    public ControladorDeErros (ControladorDeErros c) throws Exception // construtor de c�pia, clone 
     {
         // copiar c.qtdMax e c.qtdErr, respectivamente em, this.qtdMax e this.qtdErr
-
+        this.qtdMax = c.qtdMax;
+        this.qtdErr = c.qtdErr; 
     }
 
     @Override

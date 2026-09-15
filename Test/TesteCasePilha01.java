@@ -84,6 +84,21 @@ class TesteCasePilha01 {
 	void test06(){
 		Pilha p = new Pilha(0);
 
-		assertFalse(p.push(1)); //V1.1, caso de teste para valor 0 no tamanho do pilha
+		assertFalse(p.push(1)); //V1.1 - S2.2, caso de teste para valor 0 no tamanho do pilha
+	}
+
+	@Test
+	void test07(){
+		Pilha p = new Pilha();
+
+		assertTrue(p.push(10));
+		assertTrue(p.push(10));
+		assertTrue(p.push(10));
+		RetornoPilha ret = p.pop();
+		assertFalse(ret.vazia);
+	}
+	@Test
+	void test08(){
+		assertThrows(NegativeArraySizeException.class, () -> new Pilha(-1)); // Erro ao tentar criar o array com tamanho negativo, gera o throw e o assert pega
 	}
 }
